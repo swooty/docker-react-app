@@ -8,6 +8,7 @@ services:
 before_install:
   - echo "start creating an image with dockerfile"
   - docker build -t sjmdock/docker-react-app -f Dockerfile.dev .
+  #- docker build -t sjmdock/docker-react-app -f Dockerfile .
 
 script:
   - docker run -e CI=true sjmdock/docker-react-app npm run test -- --coverage
